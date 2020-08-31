@@ -202,6 +202,11 @@ void Game::altitudeBarLoading()
 		altitudeBar++;
 		altitude.setSize(sf::Vector2f(altitudeBar, 10));
 	}
+
+	if (altitudeBar >= 500)
+	{
+		altitudeBar = 0;
+	}
 }
 // code for detecting the mouseclick, and finding positions of the line, also has line speed calculation
 void Game::processMouseClick(sf::Event t_bestEvent)
@@ -218,6 +223,8 @@ void Game::processMouseClick(sf::Event t_bestEvent)
 		headVector = mouseClick - lineStart.position;
 		headVector = vectorUnitVector(headVector);
 		velocity = headVector * speed; 
+
+		resetAltitude();
 
 		missileLocation = sf::Vector2f{ 405.f,500.0f };
 	}
@@ -272,4 +279,9 @@ void Game::lineExplosion()
 		explosion += 1.0f;
 	}
 
+}
+
+void Game::resetAltitude()
+{
+	altitudeBar = 0;
 }

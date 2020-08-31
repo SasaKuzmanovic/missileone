@@ -41,6 +41,7 @@ private:
 	void processMousePress(sf::Event t_bestEvent);
 	void laser();
 	void lineExplosion();
+	void resetAltitude();
 	float explosion = 0;
 	
 	bool explode = false;
