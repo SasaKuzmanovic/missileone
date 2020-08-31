@@ -54,7 +54,9 @@ private:
 	bool shot = false;
 	float speed = 4.0f;
 	sf::Vector2f headVector;
+	sf::Vector2f headVector2;
 	sf::Vector2f velocity;
+	sf::Vector2f velocity2;
 	sf::Vector2f missileLocation;
 	sf::Vector2f lineEnd2;
 	sf::Vector2f asteroidLocation;
@@ -73,8 +75,8 @@ private:
 	sf::VertexArray m_line2{ sf::Lines };
 	sf::VertexArray m_line{ sf::Lines };
 	sf::Vertex lineStart;
-	sf::Vertex lineEnd;
 	sf::Vertex lineStart2;
+	sf::Vertex lineEnd;
 	sf::Vector2f mouseClick{ 0.0f, 0.0f };
 	bool m_exitGame; // control exiting game
 

@@ -5,7 +5,5 @@ C:\Users\sasak\Desktop\missileone\Lab3\Game.cpp(201,33): warning C4244: 'argumen
               T=float
           ]
 C:\Users\sasak\Desktop\missileone\Lab3\Game.cpp(292,23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\sasak\Desktop\missileone\Lab3\Game.cpp(297,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  main.cpp
-  Generating Code...
+C:\Users\sasak\Desktop\missileone\Lab3\Game.cpp(295,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   Lab3.vcxproj -> C:\Users\sasak\Desktop\missileone\Debug\Lab3.exe
