@@ -58,7 +58,6 @@ private:
 	sf::Vector2f velocity;
 	sf::Vector2f velocity2;
 	sf::Vector2f missileLocation;
-	sf::Vector2f lineEnd2;
 	sf::Vector2f asteroidLocation;
 
 	sf::RenderWindow m_window; // main SFML window
@@ -77,6 +76,7 @@ private:
 	sf::Vertex lineStart;
 	sf::Vertex lineStart2;
 	sf::Vertex lineEnd;
+	sf::Vertex lineEnd2;
 	sf::Vector2f mouseClick{ 0.0f, 0.0f };
 	bool m_exitGame; // control exiting game
 
