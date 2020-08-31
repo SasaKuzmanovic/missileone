@@ -37,6 +37,9 @@ private:
 	void groundSetup();
 	void altitudeBarSetup();
 	void altitudeBarLoading();
+	void processMousePress(sf::Event t_bestEvent);
+
+	bool shot = false;
 
 	sf::RenderWindow m_window; // main SFML window
 	sf::Font m_ArialBlackfont; // font used by message
