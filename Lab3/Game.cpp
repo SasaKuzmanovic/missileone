@@ -83,6 +83,10 @@ void Game::processEvents()
 			processKeys(newEvent);
 		}
 	}
+	if (sf::Event::MouseButtonPressed == newEvent.type)
+	{
+		processMousePress(newEvent);
+	}
 }
 
 
@@ -193,5 +197,18 @@ void Game::altitudeBarLoading()
 	{
 		altitudeBar++;
 		altitude.setSize(sf::Vector2f(altitudeBar, 10));
+	}
+}
+
+void Game::processMouseClick(sf::Event t_bestEvent)
+{
+	if (sf::Mouse::Left == t_bestEvent.mouseButton.button)
+	{
+		shot = true;
+
+		mouseClick = sf::Vector2f{ static_cast<float>(t_bestEvent.mouseButton.x), static_cast<float>(t_bestEvent.mouseButton.y) };
+
+		lineEnd = mouseClick;
+		lineStart = sf::Vertex{ sf::Vector2f{400.0f,500.0f}, sf::Color::White };
 	}
 }
