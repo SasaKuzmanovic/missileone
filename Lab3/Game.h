@@ -26,6 +26,8 @@ public:
 private:
 
 	int altitudeBar = 0;
+	float posx = 0;
+	float posy = 0;
 	void processEvents();
 	void processKeys(sf::Event t_event);
 	void update(sf::Time t_deltaTime);
@@ -42,8 +44,10 @@ private:
 	void laser();
 	void lineExplosion();
 	void resetAltitude();
+	void asteroidDraw();
 	float explosion = 0;
 	
+	bool lineAlive = false;
 	bool explode = false;
 	bool shot = false;
 	float speed = 4.0f;
@@ -60,10 +64,14 @@ private:
 	sf::RectangleShape square; // square at the bottom middle of the screen
 	sf::RectangleShape rectangle; // rectangle acting as a ground in the game
 	sf::RectangleShape altitude; // acts as a altitude bar
+	sf::CircleShape asteroid;
 	sf::CircleShape m_explosion;
+	sf::VertexArray m_line2{ sf::Lines };
 	sf::VertexArray m_line{ sf::Lines };
 	sf::Vertex lineStart;
 	sf::Vertex lineEnd;
+	sf::Vertex lineStart2;
+	sf::Vertex lineEnd2;
 	sf::Vector2f mouseClick{ 0.0f, 0.0f };
 	bool m_exitGame; // control exiting game
 

@@ -1,9 +1,10 @@
 ﻿  Game.cpp
-C:\Users\sasak\Desktop\missileone\Lab3\Game.cpp(199,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\sasak\Desktop\missileone\Lab3\Game.cpp(201,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
+C:\Users\sasak\Desktop\missileone\Lab3\Game.cpp(292,23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   main.cpp
   Generating Code...
   Lab3.vcxproj -> C:\Users\sasak\Desktop\missileone\Debug\Lab3.exe

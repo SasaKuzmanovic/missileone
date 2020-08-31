@@ -117,6 +117,7 @@ void Game::update(sf::Time t_deltaTime)
 	groundSetup();
 	altitudeBarLoading();
 	laser();
+	asteroidDraw();
 }
 
 /// <summary>
@@ -133,6 +134,7 @@ void Game::render()
 	m_window.draw(m_line);
 	m_window.draw(m_explosion);
 	m_window.draw(m_altitude);
+	m_window.draw(asteroid);
 	m_window.display();
 }
 
@@ -280,4 +282,23 @@ void Game::lineExplosion()
 void Game::resetAltitude()
 {
 	altitudeBar = 0;
+}
+
+void Game::asteroidDraw()
+{
+	if (lineAlive == false)
+	{
+		lineAlive = true;
+		posx = rand() % 800 + 1;
+		posy = 0;
+
+		endPoint = rand() % 800 + 1;
+
+		asteroid.setFillColor(sf::Color::Cyan);
+		asteroid.setRadius(5.0f);
+		asteroid.setPosition(sf::Vector2f{ posx, posy });
+
+		m_line2.append(asteroid.getPosition());
+		m_line2.append(lineEnd2);
+	}
 }
