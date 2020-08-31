@@ -37,9 +37,13 @@ private:
 	void groundSetup();
 	void altitudeBarSetup();
 	void altitudeBarLoading();
+	void processMouseClick(sf::Event t_bestEvent);
 	void processMousePress(sf::Event t_bestEvent);
 
 	bool shot = false;
+	float speed = 4.0f;
+	sf::Vector2f headVector;
+	sf::Vector2f velocity;
 
 	sf::RenderWindow m_window; // main SFML window
 	sf::Font m_ArialBlackfont; // font used by message
@@ -49,6 +53,9 @@ private:
 	sf::RectangleShape square; // square at the bottom middle of the screen
 	sf::RectangleShape rectangle; // rectangle acting as a ground in the game
 	sf::RectangleShape altitude; // acts as a altitude bar
+	sf::Vertex lineStart;
+	sf::Vertex lineEnd;
+	sf::Vector2f mouseClick{ 0.0f, 0.0f };
 	bool m_exitGame; // control exiting game
 
 

@@ -85,7 +85,7 @@ void Game::processEvents()
 	}
 	if (sf::Event::MouseButtonPressed == newEvent.type)
 	{
-		processMousePress(newEvent);
+		processMouseClick(newEvent);
 	}
 }
 
@@ -199,7 +199,7 @@ void Game::altitudeBarLoading()
 		altitude.setSize(sf::Vector2f(altitudeBar, 10));
 	}
 }
-
+// code for detecting the mouseclick, and finding positions of the line, also has line speed calculation
 void Game::processMouseClick(sf::Event t_bestEvent)
 {
 	if (sf::Mouse::Left == t_bestEvent.mouseButton.button)
@@ -210,5 +210,9 @@ void Game::processMouseClick(sf::Event t_bestEvent)
 
 		lineEnd = mouseClick;
 		lineStart = sf::Vertex{ sf::Vector2f{400.0f,500.0f}, sf::Color::White };
+
+		headVector = mouseClick - lineStart.position;
+		headVector = vectorUnitVector(headVector);
+		velocity = headVector * speed; 
 	}
 }
