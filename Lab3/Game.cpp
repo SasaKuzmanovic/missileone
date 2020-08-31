@@ -124,10 +124,10 @@ void Game::update(sf::Time t_deltaTime)
 /// </summary>
 void Game::render()
 {
-	m_window.clear(sf::Color::White);
+	m_window.clear(sf::Color::Black);
 	m_window.draw(m_welcomeMessage);
-	m_window.draw(m_logoSprite);
 	m_window.draw(square);
+	m_window.draw(m_logoSprite);
 	m_window.draw(rectangle);
 	m_window.draw(altitude);
 	m_window.draw(m_line);
@@ -145,14 +145,6 @@ void Game::setupFontAndText()
 	{
 		std::cout << "problem loading arial black font" << std::endl;
 	}
-	m_welcomeMessage.setFont(m_ArialBlackfont);
-	m_welcomeMessage.setString("SFML Game");
-	m_welcomeMessage.setStyle(sf::Text::Underlined | sf::Text::Italic | sf::Text::Bold);
-	m_welcomeMessage.setPosition(40.0f, 40.0f);
-	m_welcomeMessage.setCharacterSize(80U);
-	m_welcomeMessage.setOutlineColor(sf::Color::Red);
-	m_welcomeMessage.setFillColor(sf::Color::Black);
-	m_welcomeMessage.setOutlineThickness(3.0f);
 	m_altitude.setString("Altitude");
 	m_altitude.setFont(m_ArialBlackfont);
 	m_altitude.setPosition(50.0f, 550.0f);
@@ -171,15 +163,15 @@ void Game::setupSprite()
 		std::cout << "problem loading logo" << std::endl;
 	}
 	m_logoSprite.setTexture(m_logoTexture);
-	m_logoSprite.setPosition(5.0f, 5.0f);
+	m_logoSprite.setPosition(385.0f, 510.0f);
 }
 
 // setting up the square in the middle
 void Game::squareSetup()
 {
-	square.setSize(sf::Vector2f(50, 50));
+	square.setSize(sf::Vector2f(40, 40));
 	square.setFillColor(sf::Color::Yellow);
-	square.setPosition(380.0f, 500.0f);
+	square.setPosition(385.0f, 510.0f);
 }
 
 // setting up the ground level in the game
@@ -213,18 +205,22 @@ void Game::processMouseClick(sf::Event t_bestEvent)
 {
 	if (sf::Mouse::Left == t_bestEvent.mouseButton.button)
 	{
-		shot = true;
+		if (shot == false)
+		{
 
-		mouseClick = sf::Vector2f{ static_cast<float>(t_bestEvent.mouseButton.x), static_cast<float>(t_bestEvent.mouseButton.y) };
+			shot = true;
 
-		lineEnd = mouseClick;
-		lineStart = sf::Vertex{ sf::Vector2f{400.0f,500.0f}, sf::Color::White };
+			mouseClick = sf::Vector2f{ static_cast<float>(t_bestEvent.mouseButton.x), static_cast<float>(t_bestEvent.mouseButton.y) };
 
-		headVector = mouseClick - lineStart.position;
-		headVector = vectorUnitVector(headVector);
-		velocity = headVector * speed; 
+			lineEnd = mouseClick;
+			lineStart = sf::Vertex{ sf::Vector2f{400.0f,520.0f}, sf::Color::White };
 
-		missileLocation = sf::Vector2f{ 405.f,500.0f };
+			headVector = mouseClick - lineStart.position;
+			headVector = vectorUnitVector(headVector);
+			velocity = headVector * speed;
+
+			missileLocation = sf::Vector2f{ 405.0f,500.0f };
+		}
 	}
 }
 
