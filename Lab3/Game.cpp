@@ -25,6 +25,7 @@ Game::Game() :
 	setupSprite(); // load texture
 	squareSetup();
 	groundSetup();
+	altitudeBarSetup();
 }
 
 /// <summary>
@@ -109,6 +110,7 @@ void Game::update(sf::Time t_deltaTime)
 	}
 	squareSetup();
 	groundSetup();
+	altitudeBarSetup();
 }
 
 /// <summary>
@@ -121,6 +123,7 @@ void Game::render()
 	m_window.draw(m_logoSprite);
 	m_window.draw(square);
 	m_window.draw(rectangle);
+	m_window.draw(altitude);
 	m_window.display();
 }
 
@@ -171,4 +174,11 @@ void Game::groundSetup()
 	rectangle.setSize(sf::Vector2f(1200, 50));
 	rectangle.setFillColor(sf::Color::Cyan);
 	rectangle.setPosition(0.0f, 550.0f);
+}
+
+void Game::altitudeBarSetup()
+{
+	altitude.setSize(sf::Vector2f(0, 15));
+	altitude.setFillColor(sf::Color::Yellow);
+	altitude.setPosition(0.0f, 585.0f);
 }

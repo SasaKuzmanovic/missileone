@@ -34,6 +34,7 @@ private:
 	void setupSprite();
 	void squareSetup(); // setting up the square at the middle of the screen
 	void groundSetup();
+	void altitudeBarSetup();
 
 	sf::RenderWindow m_window; // main SFML window
 	sf::Font m_ArialBlackfont; // font used by message
@@ -42,7 +43,9 @@ private:
 	sf::Sprite m_logoSprite; // sprite used for sfml logo
 	sf::RectangleShape square; // square at the bottom middle of the screen
 	sf::RectangleShape rectangle; // rectangle acting as a ground in the game
+	sf::RectangleShape altitude; // acts as a altitude bar
 	bool m_exitGame; // control exiting game
+
 
 };
 
