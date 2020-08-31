@@ -292,13 +292,22 @@ void Game::asteroidDraw()
 		posx = rand() % 800 + 1;
 		posy = 0;
 
-		endPoint = rand() % 800 + 1;
+		asteroidLocation = sf::Vector2f{ posx, posy };
+
+		endPointx = rand() % 800 + 1;
+		endPointy = 550;
+		lineEnd2 = sf::Vector2f{ endPointx, endPointy };
+
+		asteroidLocation += velocity;
 
 		asteroid.setFillColor(sf::Color::Cyan);
 		asteroid.setRadius(5.0f);
-		asteroid.setPosition(sf::Vector2f{ posx, posy });
+		asteroid.setPosition(sf::Vector2f{asteroidLocation.x, asteroidLocation.y });
 
 		m_line2.append(asteroid.getPosition());
 		m_line2.append(lineEnd2);
+
+
+
 	}
 }

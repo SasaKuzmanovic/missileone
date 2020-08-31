@@ -28,6 +28,8 @@ private:
 	int altitudeBar = 0;
 	float posx = 0;
 	float posy = 0;
+	float endPointx = 0;
+	float endPointy = 0;
 	void processEvents();
 	void processKeys(sf::Event t_event);
 	void update(sf::Time t_deltaTime);
@@ -54,6 +56,8 @@ private:
 	sf::Vector2f headVector;
 	sf::Vector2f velocity;
 	sf::Vector2f missileLocation;
+	sf::Vector2f lineEnd2;
+	sf::Vector2f asteroidLocation;
 
 	sf::RenderWindow m_window; // main SFML window
 	sf::Font m_ArialBlackfont; // font used by message
@@ -71,7 +75,6 @@ private:
 	sf::Vertex lineStart;
 	sf::Vertex lineEnd;
 	sf::Vertex lineStart2;
-	sf::Vertex lineEnd2;
 	sf::Vector2f mouseClick{ 0.0f, 0.0f };
 	bool m_exitGame; // control exiting game
 
