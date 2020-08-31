@@ -1,5 +1,5 @@
 ﻿  Game.cpp
-C:\Users\sasak\Desktop\missileone\Lab3\Game.cpp(203,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\sasak\Desktop\missileone\Lab3\Game.cpp(207,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float

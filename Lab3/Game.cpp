@@ -115,7 +115,6 @@ void Game::update(sf::Time t_deltaTime)
 	}
 	squareSetup();
 	groundSetup();
-	altitudeBarSetup();
 	altitudeBarLoading();
 	laser();
 }
@@ -133,6 +132,7 @@ void Game::render()
 	m_window.draw(altitude);
 	m_window.draw(m_line);
 	m_window.draw(m_explosion);
+	m_window.draw(m_altitude);
 	m_window.display();
 }
 
@@ -153,6 +153,10 @@ void Game::setupFontAndText()
 	m_welcomeMessage.setOutlineColor(sf::Color::Red);
 	m_welcomeMessage.setFillColor(sf::Color::Black);
 	m_welcomeMessage.setOutlineThickness(3.0f);
+	m_altitude.setString("Altitude");
+	m_altitude.setFont(m_ArialBlackfont);
+	m_altitude.setPosition(50.0f, 550.0f);
+	m_altitude.setFillColor(sf::Color::Black);
 
 }
 
@@ -203,10 +207,6 @@ void Game::altitudeBarLoading()
 		altitude.setSize(sf::Vector2f(altitudeBar, 10));
 	}
 
-	if (altitudeBar >= 500)
-	{
-		altitudeBar = 0;
-	}
 }
 // code for detecting the mouseclick, and finding positions of the line, also has line speed calculation
 void Game::processMouseClick(sf::Event t_bestEvent)
@@ -224,8 +224,6 @@ void Game::processMouseClick(sf::Event t_bestEvent)
 		headVector = vectorUnitVector(headVector);
 		velocity = headVector * speed; 
 
-		resetAltitude();
-
 		missileLocation = sf::Vector2f{ 405.f,500.0f };
 	}
 }
@@ -237,6 +235,8 @@ void Game::laser()
 		missileLocation += velocity;
 		lineEnd.position = missileLocation;
 		m_line.clear();
+
+		resetAltitude();
 
 		lineExplosion();
 
