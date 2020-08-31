@@ -39,7 +39,11 @@ private:
 	void altitudeBarLoading();
 	void processMouseClick(sf::Event t_bestEvent);
 	void processMousePress(sf::Event t_bestEvent);
-
+	void laser();
+	void lineExplosion();
+	float explosion = 0;
+	
+	bool explode = false;
 	bool shot = false;
 	float speed = 4.0f;
 	sf::Vector2f headVector;

@@ -117,6 +117,7 @@ void Game::update(sf::Time t_deltaTime)
 	groundSetup();
 	altitudeBarSetup();
 	altitudeBarLoading();
+	laser();
 }
 
 /// <summary>
@@ -216,4 +217,36 @@ void Game::processMouseClick(sf::Event t_bestEvent)
 		headVector = vectorUnitVector(headVector);
 		velocity = headVector * speed; 
 	}
+}
+
+void Game::laser()
+{
+	if (shot == true)
+	{
+		missileLocation += velocity;
+		lineEnd.position = missileLocation;
+		m_line.clear();
+
+		lineExplosion();
+
+		m_line.append(lineStart);
+		m_line.append(lineEnd);
+		if (lineEnd.position.y < mouseclick.y)
+		{
+			explode = true;
+			m_line.clear();
+
+			if (explode == true && explosion >= 35.0f)
+			{
+				explode = false;
+
+				explosion = 0.0f;
+			}
+		}
+	}
+}
+
+void Game::lineExplosion()
+{
+
 }
