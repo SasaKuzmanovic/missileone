@@ -131,6 +131,8 @@ void Game::render()
 	m_window.draw(square);
 	m_window.draw(rectangle);
 	m_window.draw(altitude);
+	m_window.draw(m_line);
+	m_window.draw(m_explosion);
 	m_window.display();
 }
 
@@ -216,6 +218,8 @@ void Game::processMouseClick(sf::Event t_bestEvent)
 		headVector = mouseClick - lineStart.position;
 		headVector = vectorUnitVector(headVector);
 		velocity = headVector * speed; 
+
+		missileLocation = sf::Vector2f{ 405.f,500.0f };
 	}
 }
 
@@ -231,7 +235,7 @@ void Game::laser()
 
 		m_line.append(lineStart);
 		m_line.append(lineEnd);
-		if (lineEnd.position.y < mouseclick.y)
+		if (lineEnd.position.y < mouseClick.y)
 		{
 			explode = true;
 			m_line.clear();
@@ -248,5 +252,19 @@ void Game::laser()
 
 void Game::lineExplosion()
 {
+	m_explosion.setPosition(mouseClick);
+	m_explosion.setFillColor(sf::Color::Red);
+	m_explosion.setRadius(explosion);
+	m_explosion.setOrigin(sf::Vector2f{ explosion, explosion });
 
+	if (explosion >= 35.0f && explode == true)
+	{
+		explosion = false;
+	}
+
+
+	if (explosion < 35.0f && explode == true)
+	{
+		explosion += 1.0f;
+	}
 }

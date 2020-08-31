@@ -48,6 +48,7 @@ private:
 	float speed = 4.0f;
 	sf::Vector2f headVector;
 	sf::Vector2f velocity;
+	sf::Vector2f missileLocation;
 
 	sf::RenderWindow m_window; // main SFML window
 	sf::Font m_ArialBlackfont; // font used by message
@@ -57,6 +58,8 @@ private:
 	sf::RectangleShape square; // square at the bottom middle of the screen
 	sf::RectangleShape rectangle; // rectangle acting as a ground in the game
 	sf::RectangleShape altitude; // acts as a altitude bar
+	sf::CircleShape m_explosion;
+	sf::VertexArray m_line{ sf::Lines };
 	sf::Vertex lineStart;
 	sf::Vertex lineEnd;
 	sf::Vector2f mouseClick{ 0.0f, 0.0f };
