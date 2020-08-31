@@ -111,6 +111,7 @@ void Game::update(sf::Time t_deltaTime)
 	squareSetup();
 	groundSetup();
 	altitudeBarSetup();
+	altitudeBarLoading();
 }
 
 /// <summary>
@@ -169,6 +170,7 @@ void Game::squareSetup()
 	square.setPosition(380.0f, 500.0f);
 }
 
+// setting up the ground level in the game
 void Game::groundSetup()
 {
 	rectangle.setSize(sf::Vector2f(1200, 50));
@@ -176,9 +178,20 @@ void Game::groundSetup()
 	rectangle.setPosition(0.0f, 550.0f);
 }
 
+// altitude setup
 void Game::altitudeBarSetup()
 {
 	altitude.setSize(sf::Vector2f(0, 15));
 	altitude.setFillColor(sf::Color::Yellow);
 	altitude.setPosition(0.0f, 585.0f);
+}
+
+// loading bar increasing over time
+void Game::altitudeBarLoading()
+{
+	if (altitudeBar <= 500)
+	{
+		altitudeBar++;
+		altitude.setSize(sf::Vector2f(altitudeBar, 10));
+	}
 }

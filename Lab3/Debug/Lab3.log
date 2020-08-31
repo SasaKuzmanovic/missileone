@@ -1,2 +1,7 @@
 ﻿  Game.cpp
+C:\Users\sasak\Desktop\missileone\Lab3\Game.cpp(195,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
   Lab3.vcxproj -> C:\Users\sasak\Desktop\missileone\Debug\Lab3.exe

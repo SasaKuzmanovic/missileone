@@ -25,6 +25,7 @@ public:
 
 private:
 
+	int altitudeBar = 0;
 	void processEvents();
 	void processKeys(sf::Event t_event);
 	void update(sf::Time t_deltaTime);
@@ -35,6 +36,7 @@ private:
 	void squareSetup(); // setting up the square at the middle of the screen
 	void groundSetup();
 	void altitudeBarSetup();
+	void altitudeBarLoading();
 
 	sf::RenderWindow m_window; // main SFML window
 	sf::Font m_ArialBlackfont; // font used by message
