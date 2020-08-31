@@ -33,6 +33,7 @@ private:
 	void setupFontAndText();
 	void setupSprite();
 	void squareSetup(); // setting up the square at the middle of the screen
+	void groundSetup();
 
 	sf::RenderWindow m_window; // main SFML window
 	sf::Font m_ArialBlackfont; // font used by message
@@ -40,6 +41,7 @@ private:
 	sf::Texture m_logoTexture; // texture used for sfml logo
 	sf::Sprite m_logoSprite; // sprite used for sfml logo
 	sf::RectangleShape square; // square at the bottom middle of the screen
+	sf::RectangleShape rectangle; // rectangle acting as a ground in the game
 	bool m_exitGame; // control exiting game
 
 };

@@ -24,6 +24,7 @@ Game::Game() :
 	setupFontAndText(); // load font 
 	setupSprite(); // load texture
 	squareSetup();
+	groundSetup();
 }
 
 /// <summary>
@@ -107,6 +108,7 @@ void Game::update(sf::Time t_deltaTime)
 		m_window.close();
 	}
 	squareSetup();
+	groundSetup();
 }
 
 /// <summary>
@@ -118,6 +120,7 @@ void Game::render()
 	m_window.draw(m_welcomeMessage);
 	m_window.draw(m_logoSprite);
 	m_window.draw(square);
+	m_window.draw(rectangle);
 	m_window.display();
 }
 
@@ -161,4 +164,11 @@ void Game::squareSetup()
 	square.setSize(sf::Vector2f(50, 50));
 	square.setFillColor(sf::Color::Yellow);
 	square.setPosition(380.0f, 500.0f);
+}
+
+void Game::groundSetup()
+{
+	rectangle.setSize(sf::Vector2f(1200, 50));
+	rectangle.setFillColor(sf::Color::Cyan);
+	rectangle.setPosition(0.0f, 550.0f);
 }
