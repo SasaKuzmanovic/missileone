@@ -1,11 +1,11 @@
 /// <summary>
 /// simple game loop for SFML[2.5.1]
 /// 
-/// @author Peter Lowe
-/// @date May 2019
+/// @author Sasa Kuzmanovic
+/// @date 31/08/2020
 /// 
-/// Estimated time 12 hrs
-/// Actual time
+/// Estimated time 0
+/// Actual time 0
 ///				When :	Duration(min)
 /// session 1: 
 /// session 2:
