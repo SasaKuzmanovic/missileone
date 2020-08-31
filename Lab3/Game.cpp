@@ -243,6 +243,9 @@ void Game::laser()
 			if (explode == true && explosion >= 35.0f)
 			{
 				explode = false;
+				shot = false;
+
+				m_explosion.setRadius(0.0f);
 
 				explosion = 0.0f;
 			}
@@ -260,6 +263,7 @@ void Game::lineExplosion()
 	if (explosion >= 35.0f && explode == true)
 	{
 		explosion = false;
+		explosion = 0.0f;
 	}
 
 
@@ -267,4 +271,5 @@ void Game::lineExplosion()
 	{
 		explosion += 1.0f;
 	}
+
 }
