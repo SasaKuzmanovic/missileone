@@ -1,7 +1,9 @@
 ﻿  Game.cpp
-C:\Users\sasak\Desktop\missileone\Lab3\Game.cpp(199,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\sasak\Desktop\missileone\Lab3\Game.cpp(200,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\sasak\Desktop\missileone\Lab3\Game.cpp(215,16): error C3861: 'vectorUnitVector': identifier not found
+  MyVector2.cpp
+  Generating Code...
+  Lab3.vcxproj -> C:\Users\sasak\Desktop\missileone\Debug\Lab3.exe

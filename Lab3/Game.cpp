@@ -7,6 +7,7 @@
 /// </summary>
 
 #include "Game.h"
+#include "MyVector2.h"
 #include <iostream>
 
 
